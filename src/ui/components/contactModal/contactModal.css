@@ -1,0 +1,51 @@
+.consultModal__backdrop {
+  backdrop-filter: blur(10px);
+}
+
+.consultModal {
+  background: rgba(14, 14, 15, 0.92);
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.consultModal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.consultModal .modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.consultModal__title {
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+.consultModal__text {
+  margin: 0 0 18px 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.consultModal__label {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+}
+
+.consultModal__control {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.consultModal__control:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.96);
+  box-shadow: none;
+}
+
+.consultModal__btn {
+  border-radius: 999px;
+  padding: 10px 14px;
+}

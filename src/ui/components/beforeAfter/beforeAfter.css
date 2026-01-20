@@ -1,0 +1,75 @@
+.baCard {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 14px;
+}
+
+.baViewport {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: min(58vh, 520px);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.baViewport__before,
+.baViewport__after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.baViewport__before {
+  right: 0;
+}
+
+.baViewport__after {
+  right: auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.32);
+}
+
+.baDivider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+}
+
+.baDivider__knob {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.18);
+}
+
+.baLabels {
+  position: absolute;
+  inset: 12px 12px auto 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.baLabels__tag {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.baRange {
+  margin-top: 14px;
+}

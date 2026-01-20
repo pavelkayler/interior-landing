@@ -1,0 +1,61 @@
+.photoTile {
+  width: 100%;
+  padding: 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.92);
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.photoTile:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.photoTile__media {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+}
+
+.photoTile__cap {
+  padding: 12px 14px;
+  font-weight: 600;
+}
+
+.photoModal__backdrop {
+  backdrop-filter: blur(10px);
+}
+
+.photoModal {
+  background: rgba(14, 14, 15, 0.92);
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.photoModal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.photoModal__title {
+  font-weight: 700;
+}
+
+.photoModal__img {
+  height: min(62vh, 540px);
+  border-radius: var(--radius-md);
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 991px) {
+  .photoTile__media {
+    height: 220px;
+  }
+}

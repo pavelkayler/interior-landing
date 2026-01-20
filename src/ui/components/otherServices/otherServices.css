@@ -1,0 +1,29 @@
+.osCard {
+  height: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 18px;
+}
+
+.osCard__title {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+
+.osCard__text {
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.55;
+}
+
+.osActions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.osActions__btn {
+  border-radius: 999px;
+  padding: 10px 14px;
+}
