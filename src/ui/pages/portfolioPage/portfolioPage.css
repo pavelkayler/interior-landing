@@ -1,13 +1,30 @@
 .portfolioPage__container {
   padding-top: calc(var(--header-h) + 36px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 32px);
 }
 
-.portfolioPage__spacer {
-  height: 12px;
+.portfolioPage__lead {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .portfolioPage__actions {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.portfolioPage__card {
+  height: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.portfolioPage__cardTitle {
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }

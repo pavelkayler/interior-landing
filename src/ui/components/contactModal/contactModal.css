@@ -5,8 +5,8 @@
 .consultModal {
   background: rgba(14, 14, 15, 0.92);
   color: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
 }
 
 .consultModal .modal-header {

@@ -12,17 +12,17 @@
 }
 
 .fbSlide__img {
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
   background-size: cover;
   background-position: center;
   min-height: 360px;
 }
 
 .fbSlide__card {
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--card);
   padding: 18px;
   display: flex;
   flex-direction: column;

@@ -1,13 +1,13 @@
 .baCard {
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--card);
   padding: 14px;
 }
 
 .baViewport {
   position: relative;
-  border-radius: 14px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   height: min(58vh, 520px);
   background: rgba(0, 0, 0, 0.25);
@@ -29,7 +29,7 @@
 
 .baViewport__after {
   right: auto;
-  border-right: 1px solid rgba(255, 255, 255, 0.22);
+  border-right: 2px solid rgba(255, 255, 255, 0.32);
 }
 
 .baDivider {
@@ -43,12 +43,13 @@
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid var(--border);
   background: rgba(0, 0, 0, 0.42);
   backdrop-filter: blur(10px);
+  box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.18);
 }
 
 .baLabels {

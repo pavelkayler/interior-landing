@@ -1,8 +1,8 @@
 .principleCard {
   height: 100%;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--card);
   padding: 18px;
 }
 

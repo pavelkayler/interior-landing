@@ -39,7 +39,12 @@ const Hero = ({ onOpenConsult }) => {
             </Button>
           </div>
 
-          <button className="hero__down" onClick={() => scrollToId("about")}>
+          <button
+            type="button"
+            className="hero__down"
+            aria-label="Прокрутить к разделу О нас"
+            onClick={() => scrollToId("about")}
+          >
             ↓
           </button>
         </div>

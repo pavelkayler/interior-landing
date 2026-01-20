@@ -17,8 +17,8 @@
 
 .projectCard {
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.04);
   overflow: hidden;
   color: rgba(255, 255, 255, 0.95);
@@ -62,8 +62,8 @@
 .portfolioModal {
   background: rgba(14, 14, 15, 0.92);
   color: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
 }
 
 .portfolioModal .modal-header {
@@ -81,7 +81,7 @@
 
 .portfolioModal__img {
   height: min(62vh, 520px);
-  border-radius: 14px;
+  border-radius: var(--radius-md);
   background-size: cover;
   background-position: center;
 }
