@@ -1,52 +1,69 @@
-import { Container, Accordion } from "react-bootstrap";
-import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
+import { Container, Row, Col, Card } from "react-bootstrap";
+import { img, media001 } from "../../../core/assets/media001.js";
 import "./stages.css";
 
-const steps = [
-  {
-    title: "1. Бриф",
-    text: "Цели, стиль, бюджет, сроки. Фиксируем ТЗ и формат работы.",
-  },
-  {
-    title: "2. Планировка",
-    text: "Делаем 2–3 варианта, выбираем лучший и дорабатываем под сценарии жизни.",
-  },
-  {
-    title: "3. Концепция",
-    text: "Материалы, палитра, свет, настроение. Собираем общий образ.",
-  },
-  {
-    title: "4. Визуализация",
-    text: "Фотореалистичные рендеры, чтобы вы видели результат до ремонта.",
-  },
-  {
-    title: "5. Чертежи",
-    text: "Рабочая документация для строителей: планы, развертки, ведомости.",
-  },
-  {
-    title: "6. Сопровождение (опционально)",
-    text: "Комплектация и авторский надзор: контроль качества и соответствия проекту.",
-  },
+const timeline = [
+  "Бриф и техническое задание",
+  "Планировочные решения",
+  "Концепция и подбор материалов",
+  "3D-визуализации",
+  "Рабочая документация",
+  "Авторский надзор",
+];
+
+const list = [
+  "Знакомство и анализ задачи",
+  "Сценарии жизни и планировка",
+  "План электрики и инженерии",
+  "Концептуальные коллажи",
+  "Визуализация ключевых зон",
+  "Подготовка проекта к реализации",
 ];
 
 const Stages = () => {
-  const ref = useRevealOnScroll();
-
   return (
-    <Container>
-      <div ref={ref}>
-        <div className="sectionKicker">процесс</div>
-        <h2 className="sectionTitle">Этапы работы</h2>
-
-        <Accordion defaultActiveKey="0" className="stagesAcc" alwaysOpen>
-          {steps.map((s, i) => (
-            <Accordion.Item eventKey={String(i)} key={s.title} className="stagesAcc__item">
-              <Accordion.Header>{s.title}</Accordion.Header>
-              <Accordion.Body className="stagesAcc__body">{s.text}</Accordion.Body>
-            </Accordion.Item>
-          ))}
-        </Accordion>
-      </div>
+    <Container className="stages">
+      <h2 className="stages__title">Этапы работы</h2>
+      <Row className="g-4">
+        <Col lg={6}>
+          <Card className="stages__card stages__card--light">
+            <Card.Body>
+              <h3 className="stages__cardTitle">
+                КАК МЫ СОЗДАЕМ
+                <br />ИДЕАЛЬНЫЕ ПРОЕКТЫ
+              </h3>
+              <ul className="stages__list">
+                {list.map((item) => (
+                  <li key={item} className="stages__item">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="stages__illustration">
+                <img src={img(media001[3])} alt="Декор" />
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col lg={6}>
+          <Card className="stages__card stages__card--dark">
+            <Card.Body>
+              <div className="stages__timeline">
+                {timeline.map((item, index) => (
+                  <div key={item} className="stages__step">
+                    <div className="stages__dot" />
+                    <div
+                      className={`stages__stepText ${index % 2 === 0 ? "" : "stages__stepText--right"}`}
+                    >
+                      {item}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     </Container>
   );
 };

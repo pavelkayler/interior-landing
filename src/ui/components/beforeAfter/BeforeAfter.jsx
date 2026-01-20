@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Container, Form } from "react-bootstrap";
 import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
-import { media001, url } from "../../../core/assets/media001.js";
+import { media001, img } from "../../../core/assets/media001.js";
 import "./beforeAfter.css";
 
 const BeforeAfter = () => {
@@ -12,8 +12,8 @@ const BeforeAfter = () => {
     const before = media001[2] ?? media001[0];
     const after = media001[3] ?? before;
     return {
-      before: url(before),
-      after: url(after),
+      before: img(before),
+      after: img(after),
     };
   }, []);
 

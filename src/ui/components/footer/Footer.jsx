@@ -1,71 +1,100 @@
 import { Container, Row, Col } from "react-bootstrap";
-import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
+import { tg } from "../../../core/utils/tg.js";
 import "./footer.css";
 
 const Footer = () => {
-  const ref = useRevealOnScroll();
-
   return (
-    <Container>
-      <div ref={ref}>
-        <div className="sectionKicker">контакты</div>
-        <h2 className="sectionTitle">Связаться</h2>
-
-        <Row className="g-3">
-          <Col lg={6}>
-            <div className="footerCard">
-              <div className="footerCard__row">
-                <div className="footerCard__label">Телефон</div>
-                <a className="footerCard__value" href="tel:+70000000000">
-                  +7 (000) 000-00-00
-                </a>
-              </div>
-              <div className="footerCard__row">
-                <div className="footerCard__label">Telegram</div>
-                <a className="footerCard__value" href="#">
-                  @demidova_design
-                </a>
-              </div>
-              <div className="footerCard__row">
-                <div className="footerCard__label">Email</div>
-                <a className="footerCard__value" href="mailto:hello@example.com">
-                  hello@example.com
-                </a>
-              </div>
-              <div className="footerCard__row">
-                <div className="footerCard__label">Город</div>
-                <div className="footerCard__value">Онлайн / офлайн</div>
-              </div>
-
-              <div className="footerNote">
-                Напишите в Telegram — отвечаю быстрее всего.
-              </div>
-            </div>
+    <footer className="footer">
+      <Container>
+        <Row className="footer__top g-4">
+          <Col md={3}>
+            <div className="footer__title">Студия</div>
+            <ul className="footer__list">
+              <li>О бюро</li>
+              <li>Команда</li>
+              <li>Подход</li>
+              <li>Карьера</li>
+            </ul>
           </Col>
-
-          <Col lg={6}>
-            <div className="footerCard">
-              <div className="footerMeta">
-                <div className="footerMeta__title">Реквизиты</div>
-                <div className="footerMeta__text sectionText">
-                  ИП Демидова • ОГРНИП / ИНН — добавишь позже.
-                  <br />
-                  Политика конфиденциальности — добавишь ссылкой в конце.
-                </div>
-              </div>
-
-              <div className="footerNav">
-                <a className="footerNav__link" href="#about">О нас</a>
-                <a className="footerNav__link" href="#portfolio">Портфолио</a>
-                <a className="footerNav__link" href="#pricing">Тарифы</a>
-              </div>
-
-              <div className="footerCopy">© DEMIDOVA, {new Date().getFullYear()}</div>
+          <Col md={3}>
+            <div className="footer__title">Услуги</div>
+            <ul className="footer__list">
+              <li>Дизайн-проекты</li>
+              <li>Комплектация</li>
+              <li>Авторский надзор</li>
+              <li>Консультации</li>
+            </ul>
+          </Col>
+          <Col md={3}>
+            <div className="footer__title">Проекты</div>
+            <ul className="footer__list">
+              <li>Квартиры</li>
+              <li>Дома</li>
+              <li>Коммерция</li>
+              <li>Журнал</li>
+            </ul>
+          </Col>
+          <Col md={3}>
+            <div className="footer__title">Держим связь</div>
+            <div className="footer__contact">
+              <a href={tg("Хочу связаться")}
+                target="_blank"
+                rel="noreferrer"
+              >
+                +7 (000) 000-00-00
+              </a>
+              <a href={tg("Хочу обсудить проект")}
+                target="_blank"
+                rel="noreferrer"
+              >
+                hello@demidova.ru
+              </a>
+              <span>Пн-Пт: 10:00 — 19:00</span>
+            </div>
+            <div className="footer__socials">
+              {["TG", "IG", "FB", "BE"].map((label) => (
+                <a
+                  key={label}
+                  className="footer__social"
+                  href={tg("Хочу подписаться")}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {label}
+                </a>
+              ))}
             </div>
           </Col>
         </Row>
-      </div>
-    </Container>
+
+        <div className="footer__mid">
+          {["Главная", "О Бюро", "Портфолио", "Журнал", "Контакты"].map((label) => (
+            <span key={label} className="footer__midItem">
+              <span className="footer__arrow">→</span>
+              {label}
+            </span>
+          ))}
+        </div>
+
+        <div className="footer__bottom">
+          <span>© DEMIDOVA, {new Date().getFullYear()}</span>
+          <div className="footer__bottomLinks">
+            <a href={tg("Согласие на обработку данных")}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Согласие на обработку данных
+            </a>
+            <a href={tg("Политика конфиденциальности")}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Политика конфиденциальности
+            </a>
+          </div>
+        </div>
+      </Container>
+    </footer>
   );
 };
 
