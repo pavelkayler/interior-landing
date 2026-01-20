@@ -1,0 +1,21 @@
+.stagesAcc {
+  --bs-accordion-bg: rgba(255, 255, 255, 0.05);
+  --bs-accordion-border-color: rgba(255, 255, 255, 0.12);
+  --bs-accordion-color: rgba(255, 255, 255, 0.92);
+  --bs-accordion-btn-color: rgba(255, 255, 255, 0.92);
+  --bs-accordion-btn-bg: rgba(255, 255, 255, 0.05);
+  --bs-accordion-active-bg: rgba(255, 255, 255, 0.08);
+  --bs-accordion-active-color: rgba(255, 255, 255, 0.98);
+  --bs-accordion-btn-focus-border-color: rgba(255, 255, 255, 0.18);
+  --bs-accordion-btn-focus-box-shadow: none;
+}
+
+.stagesAcc__item {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.stagesAcc__body {
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.55;
+}

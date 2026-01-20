@@ -1,0 +1,13 @@
+.portfolioPage__container {
+  padding-top: calc(var(--header-h) + 36px);
+}
+
+.portfolioPage__spacer {
+  height: 12px;
+}
+
+.portfolioPage__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}

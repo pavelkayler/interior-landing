@@ -1,0 +1,51 @@
+.fbCarousel .carousel-indicators [data-bs-target] {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+}
+
+.fbSlide {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.fbSlide__img {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-size: cover;
+  background-position: center;
+  min-height: 360px;
+}
+
+.fbSlide__card {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fbSlide__text {
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.fbSlide__name {
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+@media (max-width: 991px) {
+  .fbSlide {
+    grid-template-columns: 1fr;
+  }
+
+  .fbSlide__img {
+    min-height: 240px;
+  }
+}
