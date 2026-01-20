@@ -1,6 +1,6 @@
 import { Container, Button } from "react-bootstrap";
 import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
-import { heroUrl } from "../../../core/assets/placeholders.js";
+import { media001, url } from "../../../core/assets/media001.js";
 import "./hero.css";
 
 const scrollToId = (id) => {
@@ -13,9 +13,11 @@ const Hero = ({ onOpenConsult }) => {
   const headRef = useRevealOnScroll({ rootMargin: "0px 0px -20% 0px", threshold: 0.12 });
   const valuesRef = useRevealOnScroll({ rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
 
+  const heroImage = media001[0];
+
   return (
     <div className="hero">
-      <div className="hero__bg" style={{ backgroundImage: `url(${heroUrl})` }} />
+      <div className="hero__bg" style={{ backgroundImage: `url(${url(heroImage)})` }} />
       <div className="hero__overlay" />
 
       <Container className="hero__container">

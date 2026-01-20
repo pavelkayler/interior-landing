@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Container, Row, Col, Button, Modal, Carousel } from "react-bootstrap";
 import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
-import { portfolioUrls } from "../../../core/assets/placeholders.js";
+import { media001, url } from "../../../core/assets/media001.js";
 import "./portfolioPreview.css";
 
 const projectsSeed = [
@@ -19,11 +19,14 @@ const PortfolioPreview = () => {
   const [open, setOpen] = useState(false);
 
   const projects = useMemo(() => {
-    return projectsSeed.map((p, i) => ({
-      ...p,
-      img: portfolioUrls[i]?.img,
-      thumb: portfolioUrls[i]?.thumb,
-    }));
+    return projectsSeed.map((p, i) => {
+      const name = media001[i % media001.length];
+      return {
+        ...p,
+        img: url(name),
+        thumb: url(name),
+      };
+    });
   }, []);
 
   const onOpen = (i) => {
