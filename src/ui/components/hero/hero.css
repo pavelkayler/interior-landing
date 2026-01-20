@@ -23,9 +23,6 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image:
-    url("/hero.jpg"),
-    url("https://source.unsplash.com/2000x1400/?interior,design&sig=31");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -4,9 +4,6 @@
   min-height: 360px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
-  background-image:
-    url("/about.jpg"),
-    url("https://source.unsplash.com/1200x900/?portrait,interior&sig=99");
   background-size: cover;
   background-position: center;
 }

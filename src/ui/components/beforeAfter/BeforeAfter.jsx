@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Container, Form } from "react-bootstrap";
 import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
+import { beforeUrl, afterUrl } from "../../../core/assets/placeholders.js";
 import "./beforeAfter.css";
 
 const BeforeAfter = () => {
@@ -9,10 +10,8 @@ const BeforeAfter = () => {
 
   const images = useMemo(() => {
     return {
-      before: "/before.jpg",
-      after: "/after.jpg",
-      fallbackBefore: "https://source.unsplash.com/1600x1000/?interior,old&sig=201",
-      fallbackAfter: "https://source.unsplash.com/1600x1000/?interior,modern&sig=202",
+      before: beforeUrl,
+      after: afterUrl,
     };
   }, []);
 
@@ -24,12 +23,12 @@ const BeforeAfter = () => {
 
         <div className="baCard">
           <div className="baViewport">
-            <div className="baViewport__before" style={{ backgroundImage: `url(${images.before}), url(${images.fallbackBefore})` }} />
+            <div className="baViewport__before" style={{ backgroundImage: `url(${images.before})` }} />
             <div
               className="baViewport__after"
               style={{
                 width: `${value}%`,
-                backgroundImage: `url(${images.after}), url(${images.fallbackAfter})`,
+                backgroundImage: `url(${images.after})`,
               }}
             />
 

@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Container, Row, Col, Button, Modal, Carousel } from "react-bootstrap";
 import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
+import { portfolioUrls } from "../../../core/assets/placeholders.js";
 import "./portfolioPreview.css";
 
 const projectsSeed = [
@@ -20,8 +21,8 @@ const PortfolioPreview = () => {
   const projects = useMemo(() => {
     return projectsSeed.map((p, i) => ({
       ...p,
-      img: `https://source.unsplash.com/1200x900/?interior,design&sig=${i + 10}`,
-      thumb: `https://source.unsplash.com/900x700/?interior,design&sig=${i + 10}`,
+      img: portfolioUrls[i]?.img,
+      thumb: portfolioUrls[i]?.thumb,
     }));
   }, []);
 

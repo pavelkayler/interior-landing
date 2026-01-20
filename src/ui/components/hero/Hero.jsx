@@ -1,5 +1,6 @@
 import { Container, Button } from "react-bootstrap";
 import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
+import { heroUrl } from "../../../core/assets/placeholders.js";
 import "./hero.css";
 
 const scrollToId = (id) => {
@@ -14,7 +15,7 @@ const Hero = ({ onOpenConsult }) => {
 
   return (
     <div className="hero">
-      <div className="hero__bg" />
+      <div className="hero__bg" style={{ backgroundImage: `url(${heroUrl})` }} />
       <div className="hero__overlay" />
 
       <Container className="hero__container">
