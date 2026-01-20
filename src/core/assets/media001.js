@@ -1,6 +1,6 @@
-export const basePath = `${import.meta.env.BASE_URL}media/001_ALL_final/`;
+export const base = import.meta.env.BASE_URL;
 
-export const url = (name) => `${basePath}${name}`;
+export const img = (name) => `${base}media/001_ALL_final/${name}`;
 
 export const media001 = [
   "001_bathroom_logo.jpg",

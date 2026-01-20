@@ -1,41 +1,64 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
-import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
+import { Accordion, Container, Button } from "react-bootstrap";
+import { tg } from "../../../core/utils/tg.js";
 import "./otherServices.css";
 
 const services = [
-  { title: "Консультация", text: "Быстрый разбор задачи, бюджета и рисков." },
-  { title: "Планировочное решение", text: "Варианты планировки под ваш сценарий жизни." },
-  { title: "Подбор материалов", text: "Фактуры, свет, мебель, отделка — под стиль и бюджет." },
-  { title: "Комплектация", text: "Подбор и заказ позиций, контроль сроков и замен." },
-  { title: "Авторский надзор", text: "Контроль реализации и соответствия проекту." },
+  {
+    title: "ПЛАНИРОВОЧНОЕ РЕШЕНИЕ",
+    price: "от 2 500 ₽ за м2",
+    desc: "Планировка под ваш сценарий жизни, функциональные зоны и варианты расстановки мебели.",
+  },
+  {
+    title: "ДИЗАЙН-ПРОЕКТ",
+    price: "от 8 500 ₽ за м2",
+    desc: "Полный пакет дизайн-проекта, от концепции до рабочей документации и подборов.",
+  },
+  {
+    title: "КОНСУЛЬТАЦИЯ ПО ДИЗАЙНУ БЕЗ РАЗРАБОТКИ ПРОЕКТА",
+    price: "от 40 000 ₽",
+    desc: "Разбор планировки, подбор материалов и ответы на вопросы без создания полного проекта.",
+  },
+  {
+    title: "КОНСУЛЬТАЦИЯ ПО ВЫБОРУ КВАРТИРЫ ДО ЕЕ ПОКУПКИ",
+    price: "от 55 000 ₽",
+    desc: "Оценка планировки, потенциала объекта, рисков перепланировки и бюджета будущего ремонта.",
+  },
 ];
 
-const OtherServices = ({ onOpenConsult }) => {
-  const ref = useRevealOnScroll();
-
+const OtherServices = () => {
   return (
-    <Container>
-      <div ref={ref}>
-        <div className="sectionKicker">дополнительно</div>
-        <h2 className="sectionTitle">Прочие услуги</h2>
-
-        <Row className="g-3">
-          {services.map((s) => (
-            <Col md={6} lg={4} key={s.title}>
-              <div className="osCard">
-                <div className="osCard__title">{s.title}</div>
-                <div className="osCard__text">{s.text}</div>
-              </div>
-            </Col>
-          ))}
-        </Row>
-
-        <div className="osActions">
-          <Button variant="outline-light" className="osActions__btn" onClick={onOpenConsult}>
-            Узнать стоимость
-          </Button>
-        </div>
+    <Container className="otherServices">
+      <div className="otherServices__head">
+        <h2 className="otherServices__title">СТОИМОСТЬ</h2>
+        <p className="otherServices__subtitle">
+          Точные цены рассчитываются после брифа. Ниже — ориентиры по ключевым услугам.
+        </p>
       </div>
+
+      <Accordion className="otherServices__list" flush>
+        {services.map((service, index) => (
+          <Accordion.Item eventKey={String(index)} key={service.title}>
+            <Accordion.Header>
+              <div className="otherServices__row">
+                <span className="otherServices__name">{service.title}</span>
+                <span className="otherServices__price">{service.price}</span>
+              </div>
+            </Accordion.Header>
+            <Accordion.Body>
+              <p className="otherServices__desc">{service.desc}</p>
+              <Button
+                className="otherServices__btn"
+                as="a"
+                href={tg(`Интересует услуга ${service.title}`)}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Написать в Telegram
+              </Button>
+            </Accordion.Body>
+          </Accordion.Item>
+        ))}
+      </Accordion>
     </Container>
   );
 };

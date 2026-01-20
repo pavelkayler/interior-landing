@@ -1,74 +1,34 @@
-import { Container, Button } from "react-bootstrap";
-import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
-import { media001, url } from "../../../core/assets/media001.js";
+import { Button, Container } from "react-bootstrap";
+import { img, media001 } from "../../../core/assets/media001.js";
+import { tg } from "../../../core/utils/tg.js";
 import "./hero.css";
 
-const scrollToId = (id) => {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.scrollIntoView({ behavior: "smooth", block: "start" });
-};
-
-const Hero = ({ onOpenConsult }) => {
-  const headRef = useRevealOnScroll({ rootMargin: "0px 0px -20% 0px", threshold: 0.12 });
-  const valuesRef = useRevealOnScroll({ rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
-
-  const heroImage = media001[0];
+const Hero = () => {
+  const heroImage = media001[11];
 
   return (
     <div className="hero">
-      <div className="hero__bg" style={{ backgroundImage: `url(${url(heroImage)})` }} />
+      <div className="hero__bg" style={{ backgroundImage: `url(${img(heroImage)})` }} />
       <div className="hero__overlay" />
 
-      <Container className="hero__container">
-        <div ref={headRef} className="hero__head">
-          <div className="hero__kicker">СТУДИЯ ДИЗАЙНА ИНТЕРЬЕРОВ</div>
-
+      <Container className="hero__content">
+        <div className="hero__text">
+          <div className="hero__line" />
           <h1 className="hero__title">ДИЗАЙН ИНТЕРЬЕРА</h1>
-
           <p className="hero__subtitle">
-            Я не создаю дизайн-проект, я создаю ощущения
-            <br />
-            комфорта и спокойствия в доме.
+            Я не создаю дизайн-проект.
+            <br />Я создаю для вас новый образ жизни
           </p>
-
-          <div className="hero__cta">
-            <Button
-              variant="outline-light"
-              className="hero__btn"
-              onClick={onOpenConsult}
-            >
-              Обсудить проект
-            </Button>
-          </div>
-
-          <button
-            type="button"
-            className="hero__down"
-            aria-label="Прокрутить к разделу О нас"
-            onClick={() => scrollToId("about")}
+          <Button
+            variant="outline-light"
+            className="hero__cta"
+            as="a"
+            href={tg("Хочу обсудить дизайн-проект")}
+            target="_blank"
+            rel="noreferrer"
           >
-            ↓
-          </button>
-        </div>
-
-        <div ref={valuesRef} className="heroValues">
-          <div className="heroValues__item">
-            <div className="heroValues__label">Планировка</div>
-            <div className="heroValues__value">удобство</div>
-          </div>
-          <div className="heroValues__item">
-            <div className="heroValues__label">Визуализация</div>
-            <div className="heroValues__value">атмосфера</div>
-          </div>
-          <div className="heroValues__item">
-            <div className="heroValues__label">Чертежи</div>
-            <div className="heroValues__value">безопасность</div>
-          </div>
-          <div className="heroValues__item">
-            <div className="heroValues__label">Бюджет</div>
-            <div className="heroValues__value">спокойствие</div>
-          </div>
+            ОБСУДИТЬ ПРОЕКТ
+          </Button>
         </div>
       </Container>
     </div>

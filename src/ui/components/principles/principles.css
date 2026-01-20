@@ -1,18 +1,27 @@
-.principleCard {
-  height: 100%;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
-  background: var(--card);
-  padding: 18px;
+.principles {
+  padding: clamp(32px, 6vw, 96px) 0;
 }
 
-.principleCard__title {
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  margin-bottom: 10px;
+.principles__title {
+  font-size: clamp(24px, 2.4vw, 38px);
+  font-weight: 500;
+  margin-bottom: 12px;
 }
 
-.principleCard__text {
-  color: rgba(255, 255, 255, 0.72);
-  line-height: 1.55;
+.principles__subtitle {
+  color: rgba(0, 0, 0, 0.55);
+  font-size: clamp(13px, 1vw, 16px);
+  max-width: 520px;
+  margin-bottom: clamp(24px, 3vw, 36px);
+}
+
+.principles__card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0;
+  padding: clamp(24px, 3vw, 36px);
+  min-height: 140px;
+  font-size: clamp(14px, 1.2vw, 18px);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(0, 0, 0, 0.7);
 }

@@ -1,66 +1,58 @@
 import { useMemo, useState } from "react";
-import { Container, Row, Col, Modal, Carousel } from "react-bootstrap";
-import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
-import { media001, url } from "../../../core/assets/media001.js";
+import { Container } from "react-bootstrap";
+import { img, media001 } from "../../../core/assets/media001.js";
 import "./photos.css";
 
 const Photos = () => {
-  const ref = useRevealOnScroll();
-  const [open, setOpen] = useState(false);
+  const slides = useMemo(() => {
+    const items = media001.slice(0, 12);
+    return items.length >= 10 ? items : [...items, ...items].slice(0, 10);
+  }, []);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const items = useMemo(() => {
-    return Array.from({ length: 6 }, (_, i) => {
-      const name = media001[i % media001.length];
-      return {
-        id: i,
-        thumb: url(name),
-        img: url(name),
-        label: `Реализация #${i + 1}`,
-      };
-    });
-  }, []);
+  const backgroundImage = media001[6];
 
-  const onOpen = (i) => {
-    setActiveIndex(i);
-    setOpen(true);
+  const onPrev = () => {
+    setActiveIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  const onClose = () => setOpen(false);
+  const onNext = () => {
+    setActiveIndex((prev) => (prev + 1) % slides.length);
+  };
 
   return (
-    <Container>
-      <div ref={ref}>
-        <div className="sectionKicker">реализации</div>
-        <h2 className="sectionTitle">Фото реализованных интерьеров</h2>
-
-        <Row className="g-3">
-          {items.map((x, i) => (
-            <Col md={6} lg={4} key={x.id}>
-              <button className="photoTile" onClick={() => onOpen(i)}>
-                <div className="photoTile__media" style={{ backgroundImage: `url(${x.thumb})` }} />
-                <div className="photoTile__cap">{x.label}</div>
-              </button>
-            </Col>
-          ))}
-        </Row>
-      </div>
-
-      <Modal show={open} onHide={onClose} centered size="lg" contentClassName="photoModal" backdropClassName="photoModal__backdrop">
-        <Modal.Header closeButton closeVariant="white">
-          <Modal.Title className="photoModal__title">{items[activeIndex]?.label}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Carousel activeIndex={activeIndex} onSelect={(i) => setActiveIndex(i)} interval={null}>
-            {items.map((x) => (
-              <Carousel.Item key={x.id}>
-                <div className="photoModal__img" style={{ backgroundImage: `url(${x.img})` }} />
-              </Carousel.Item>
+    <div className="photoGallery" style={{ backgroundImage: `url(${img(backgroundImage)})` }}>
+      <div className="photoGallery__overlay" />
+      <Container className="photoGallery__content">
+        <div className="photoGallery__title">05 / ФОТО РЕАЛИЗОВАННЫХ ПРОЕКТОВ</div>
+        <div className="photoGallery__main">
+          <div
+            className="photoGallery__slide"
+            style={{ backgroundImage: `url(${img(slides[activeIndex])})` }}
+          />
+        </div>
+        <div className="photoGallery__thumbsWrap">
+          <button className="photoGallery__nav" type="button" onClick={onPrev}>
+            ←
+          </button>
+          <div className="photoGallery__thumbs">
+            {slides.map((name, index) => (
+              <button
+                key={`${name}-${index}`}
+                type="button"
+                className={`photoGallery__thumb ${index === activeIndex ? "photoGallery__thumb--active" : ""}`}
+                style={{ backgroundImage: `url(${img(name)})` }}
+                onClick={() => setActiveIndex(index)}
+                aria-label={`Показать фото ${index + 1}`}
+              />
             ))}
-          </Carousel>
-        </Modal.Body>
-      </Modal>
-    </Container>
+          </div>
+          <button className="photoGallery__nav" type="button" onClick={onNext}>
+            →
+          </button>
+        </div>
+      </Container>
+    </div>
   );
 };
 

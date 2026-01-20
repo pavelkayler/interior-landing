@@ -1,60 +1,73 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
-import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
-import { media001, url } from "../../../core/assets/media001.js";
+import { Container, Row, Col } from "react-bootstrap";
+import { img, media001 } from "../../../core/assets/media001.js";
+import { tg } from "../../../core/utils/tg.js";
 import "./about.css";
 
-const facts = [
-  { k: "Сроки", v: "от 7 дней" },
-  { k: "Формат", v: "онлайн / офлайн" },
-  { k: "Документы", v: "полный комплект" },
-];
-
-const About = ({ onOpenConsult }) => {
-  const ref = useRevealOnScroll();
-
-  const aboutImage = media001[1] ?? media001[0];
-
+const About = () => {
   return (
-    <Container>
-      <div ref={ref}>
-        <div className="sectionKicker">подход</div>
-        <h2 className="sectionTitle">О нас</h2>
+    <Container className="about">
+      <Row className="align-items-start g-4">
+        <Col lg={6} className="about__left">
+          <div className="about__header">
+            <h2 className="about__title">Обо мне</h2>
+            <div className="about__line" />
+          </div>
+          <p className="about__text">
+            Я — дизайнер интерьеров с фокусом на гармоничную архитектуру
+            пространства, свет и сценарии жизни. Моя задача — создавать интерьеры,
+            в которых хочется жить, отдыхать и вдохновляться каждый день.
+          </p>
+          <p className="about__text">
+            Работаю с частными и коммерческими проектами, подбираю материалы,
+            создаю эстетичную и практичную основу для реализации, чтобы ремонт
+            проходил уверенно и предсказуемо.
+          </p>
+          <p className="about__text">
+            Для меня важны детали, пропорции и атмосфера. Каждый проект — это
+            индивидуальный образ жизни, а не просто набор решений.
+          </p>
 
-        <Row className="g-3 align-items-stretch">
-          <Col lg={5}>
-            <div className="aboutMedia" style={{ backgroundImage: `url(${url(aboutImage)})` }} />
-          </Col>
-
-          <Col lg={7}>
-            <div className="aboutCard">
-              <p className="aboutCard__lead">
-                Делаю проект так, чтобы в процессе ремонта у вас было ощущение контроля, а в итоге —
-                ощущение дома.
-              </p>
-
-              <p className="sectionText">
-                Планировка, визуализация и рабочая документация — это не «пакет файлов», а гарантия,
-                что идея получится именно такой, как вы её представляете.
-              </p>
-
-              <div className="aboutFacts">
-                {facts.map((x) => (
-                  <div key={x.k} className="aboutFacts__item">
-                    <div className="aboutFacts__k">{x.k}</div>
-                    <div className="aboutFacts__v">{x.v}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="aboutCard__actions">
-                <Button variant="outline-light" className="aboutCard__btn" onClick={onOpenConsult}>
-                  Обсудить задачу
-                </Button>
-              </div>
+          <div className="about__footer">
+            <div className="about__socials">
+              {[
+                "TG",
+                "IG",
+                "FB",
+                "PI",
+              ].map((label) => (
+                <a
+                  key={label}
+                  className="about__social"
+                  href={tg("Хочу узнать подробнее о студии")}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {label}
+                </a>
+              ))}
             </div>
-          </Col>
-        </Row>
-      </div>
+            <img
+              className="about__signature"
+              src={img(media001[2])}
+              alt="Подпись"
+            />
+          </div>
+        </Col>
+        <Col lg={6} className="about__right">
+          <div className="about__photoWrap">
+            <img
+              className="about__photo"
+              src={img(media001[9])}
+              alt="Екатерина Иларионова"
+            />
+            <div className="about__note">
+              Екатерина Иларионова
+              <br />ведущий дизайнер, основатель
+              <br />студии FORMIGO group
+            </div>
+          </div>
+        </Col>
+      </Row>
     </Container>
   );
 };

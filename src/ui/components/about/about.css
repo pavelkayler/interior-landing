@@ -1,70 +1,95 @@
-.aboutMedia {
-  width: 100%;
-  height: 100%;
-  min-height: 360px;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
-  background-size: cover;
-  background-position: center;
+.about {
+  padding: clamp(32px, 6vw, 96px) 0;
 }
 
-.aboutCard {
-  height: 100%;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
-  background: var(--card);
-  padding: 18px;
-}
-
-.aboutCard__lead {
+.about__title {
+  font-size: clamp(28px, 3.2vw, 44px);
   margin: 0 0 12px 0;
-  font-size: 18px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.92);
-  font-weight: 600;
+  font-weight: 500;
 }
 
-.aboutFacts {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.about__header {
+  position: relative;
+  margin-bottom: clamp(18px, 2vw, 28px);
+}
+
+.about__line {
+  height: 1px;
+  width: min(520px, 70vw);
+  background: rgba(0, 0, 0, 0.2);
+  margin-top: 12px;
+}
+
+.about__text {
+  font-size: clamp(14px, 1.1vw, 18px);
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 16px;
+}
+
+.about__footer {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+  margin-top: clamp(16px, 3vw, 32px);
+}
+
+.about__socials {
+  display: flex;
   gap: 10px;
-  margin-top: 14px;
 }
 
-.aboutFacts__item {
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
-  padding: 12px;
-}
-
-.aboutFacts__k {
-  font-size: 12px;
-  letter-spacing: 0.16em;
+.about__social {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #0d0d0d;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.70);
-  margin-bottom: 6px;
 }
 
-.aboutFacts__v {
-  font-weight: 800;
+.about__signature {
+  width: clamp(80px, 10vw, 130px);
+  opacity: 0.5;
+  filter: grayscale(1);
 }
 
-.aboutCard__actions {
-  margin-top: 16px;
+.about__photoWrap {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.aboutCard__btn {
-  border-radius: 999px;
-  padding: 10px 14px;
+.about__photo {
+  width: min(420px, 80vw);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.about__note {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  font-size: clamp(10px, 0.9vw, 13px);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(0, 0, 0, 0.55);
+  text-align: right;
 }
 
 @media (max-width: 991px) {
-  .aboutFacts {
-    grid-template-columns: 1fr;
+  .about__photoWrap {
+    justify-content: flex-start;
   }
 
-  .aboutMedia {
-    min-height: 280px;
+  .about__note {
+    position: static;
+    margin-bottom: 12px;
   }
 }
