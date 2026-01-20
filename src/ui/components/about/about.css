@@ -30,7 +30,9 @@
 .about__footer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: clamp(16px, 3vw, 32px);
+  width: 100%;
   margin-top: clamp(16px, 3vw, 32px);
 }
 
@@ -48,9 +50,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 16px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.about__social:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.about__signatureWrap {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
 }
 
 .about__signature {
@@ -79,7 +91,8 @@
   font-size: clamp(10px, 0.9vw, 13px);
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: rgba(0, 0, 0, 0.55);
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
   text-align: right;
 }
 

@@ -30,27 +30,30 @@ const About = () => {
           <div className="about__footer">
             <div className="about__socials">
               {[
-                "TG",
-                "IG",
-                "FB",
-                "PI",
-              ].map((label) => (
+                { label: "Telegram", icon: "bi-telegram" },
+                { label: "Instagram", icon: "bi-instagram" },
+                { label: "Facebook", icon: "bi-facebook" },
+                { label: "Pinterest", icon: "bi-pinterest" },
+              ].map((item) => (
                 <a
-                  key={label}
+                  key={item.label}
                   className="about__social"
                   href={tg("Хочу узнать подробнее о студии")}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label={item.label}
                 >
-                  {label}
+                  <i className={`bi ${item.icon}`} aria-hidden="true" />
                 </a>
               ))}
             </div>
-            <img
-              className="about__signature"
-              src={img(media001[2])}
-              alt="Подпись"
-            />
+            <div className="about__signatureWrap">
+              <img
+                className="about__signature"
+                src={img(media001[2])}
+                alt="Подпись"
+              />
+            </div>
           </div>
         </Col>
         <Col lg={6} className="about__right">
