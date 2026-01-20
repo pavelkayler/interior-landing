@@ -52,15 +52,21 @@ const Footer = () => {
               <span>Пн-Пт: 10:00 — 19:00</span>
             </div>
             <div className="footer__socials">
-              {["TG", "IG", "FB", "BE"].map((label) => (
+              {[
+                { label: "Telegram", icon: "bi-telegram" },
+                { label: "Instagram", icon: "bi-instagram" },
+                { label: "Facebook", icon: "bi-facebook" },
+                { label: "Behance", icon: "bi-behance" },
+              ].map((item) => (
                 <a
-                  key={label}
+                  key={item.label}
                   className="footer__social"
                   href={tg("Хочу подписаться")}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label={item.label}
                 >
-                  {label}
+                  <i className={`bi ${item.icon}`} aria-hidden="true" />
                 </a>
               ))}
             </div>
@@ -68,11 +74,16 @@ const Footer = () => {
         </Row>
 
         <div className="footer__mid">
-          {["Главная", "О Бюро", "Портфолио", "Журнал", "Контакты"].map((label) => (
-            <span key={label} className="footer__midItem">
-              <span className="footer__arrow">→</span>
-              {label}
-            </span>
+          {[
+            { label: "Главная", href: "#hero" },
+            { label: "О Бюро", href: "#about" },
+            { label: "Портфолио", href: "#portfolio" },
+            { label: "Журнал", href: "#other" },
+            { label: "Контакты", href: "#contacts" },
+          ].map((item) => (
+            <a key={item.label} className="footer__midItem" href={item.href}>
+              {item.label}
+            </a>
           ))}
         </div>
 

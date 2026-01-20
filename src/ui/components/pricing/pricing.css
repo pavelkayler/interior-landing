@@ -1,5 +1,9 @@
 .packages {
   padding: clamp(32px, 6vw, 96px) 0;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .packages__head {

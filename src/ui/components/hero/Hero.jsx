@@ -13,7 +13,6 @@ const Hero = () => {
 
       <Container className="hero__content">
         <div className="hero__text">
-          <div className="hero__line" />
           <h1 className="hero__title">ДИЗАЙН ИНТЕРЬЕРА</h1>
           <p className="hero__subtitle">
             Я не создаю дизайн-проект.

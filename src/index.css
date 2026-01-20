@@ -2,7 +2,7 @@
   --bg: #f8f5f1;
   --text: #1a1a1a;
   --muted: rgba(0, 0, 0, 0.58);
-  --header-h: clamp(64px, 6vw, 76px);
+  --header-h: 80px;
   --container-max: 1180px;
 }
 

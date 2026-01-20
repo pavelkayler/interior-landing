@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "../../components/header/Header.jsx";
 import Hero from "../../components/hero/Hero.jsx";
 import About from "../../components/about/About.jsx";
@@ -8,11 +9,14 @@ import Pricing from "../../components/pricing/Pricing.jsx";
 import Photos from "../../components/photos/Photos.jsx";
 import OtherServices from "../../components/otherServices/OtherServices.jsx";
 import Footer from "../../components/footer/Footer.jsx";
+import BackToTop from "../../components/backToTop/BackToTop.jsx";
 
 const MainPage = () => {
+  const [didNavigate, setDidNavigate] = useState(false);
+
   return (
     <>
-      <Header />
+      <Header onNavigate={() => setDidNavigate(true)} />
 
       <section id="hero">
         <Hero />
@@ -49,6 +53,8 @@ const MainPage = () => {
       <section id="contacts" className="section section--footer">
         <Footer />
       </section>
+
+      <BackToTop didNavigate={didNavigate} />
     </>
   );
 };

@@ -1,11 +1,14 @@
 .appHeader {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
-  z-index: 10;
-  padding: clamp(18px, 2.2vw, 32px) 0;
+  z-index: 1000;
+  min-height: var(--header-h);
+  padding: 0;
   background: transparent;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .appHeader .navbar-toggler {
@@ -15,17 +18,13 @@
 .appHeader__inner {
   display: flex;
   align-items: center;
+  min-height: var(--header-h);
 }
 
 .appHeader__brand {
   font-weight: 500;
-  color: #fff;
   letter-spacing: 0.32em;
   font-size: clamp(14px, 1.2vw, 18px);
-}
-
-.appHeader__brand:hover {
-  color: #fff;
 }
 
 .appHeader__nav {
@@ -33,33 +32,75 @@
 }
 
 .appHeader__link {
-  color: rgba(255, 255, 255, 0.85);
   font-size: clamp(11px, 0.85vw, 13px);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   padding: 0;
 }
 
-.appHeader__link:hover,
+.appHeader__link,
+.appHeader__link:visited,
+.appHeader__link:active,
 .appHeader__link:focus {
-  color: #fff;
+  color: inherit;
 }
 
 .appHeader__toggle {
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: currentColor;
 }
 
 .appHeader__toggle:focus {
   box-shadow: none;
 }
 
-@media (max-width: 991px) {
-  .appHeader {
-    position: fixed;
-    background: rgba(8, 8, 8, 0.75);
-    backdrop-filter: blur(12px);
-  }
+.appHeader--dark {
+  color: #fff;
+  background: rgba(8, 8, 8, 0.3);
+  backdrop-filter: blur(12px);
+}
 
+.appHeader--light {
+  color: #1a1a1a;
+  background: rgba(253, 251, 248, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+.appHeader--dark .appHeader__brand,
+.appHeader--dark .appHeader__brand:hover,
+.appHeader--dark .appHeader__link,
+.appHeader--dark .appHeader__link:visited,
+.appHeader--dark .appHeader__link:active,
+.appHeader--dark .appHeader__link:focus {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.appHeader--light .appHeader__brand,
+.appHeader--light .appHeader__brand:hover,
+.appHeader--light .appHeader__link,
+.appHeader--light .appHeader__link:visited,
+.appHeader--light .appHeader__link:active,
+.appHeader--light .appHeader__link:focus {
+  color: rgba(0, 0, 0, 0.78);
+}
+
+.appHeader__link:hover,
+.appHeader__link:focus {
+  color: inherit;
+}
+
+.appHeader__link--active {
+  font-weight: 600;
+}
+
+.appHeader--dark .appHeader__link--active {
+  color: #fff;
+}
+
+.appHeader--light .appHeader__link--active {
+  color: #111;
+}
+
+@media (max-width: 991px) {
   .appHeader__nav {
     padding-top: 16px;
     gap: 12px;
