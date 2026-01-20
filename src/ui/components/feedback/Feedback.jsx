@@ -1,28 +1,31 @@
 import { useMemo } from "react";
 import { Container, Carousel } from "react-bootstrap";
 import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
-import { avatars } from "../../../core/assets/placeholders.js";
+import { media001, url } from "../../../core/assets/media001.js";
 import "./feedback.css";
 
 const Feedback = () => {
   const ref = useRevealOnScroll();
 
   const items = useMemo(() => {
+    const first = media001[4] ?? media001[0];
+    const second = media001[5] ?? first;
+    const third = media001[6] ?? second;
     return [
       {
         name: "Анна",
         text: "Всё по делу: планировка, свет, материалы. Ремонт прошёл спокойно, результат — как на визуализации.",
-        img: avatars[0],
+        img: url(first),
       },
       {
         name: "Сергей",
         text: "Понравилось, что сразу учитываются сценарии жизни и бюджет. Документация очень помогает строителям.",
-        img: avatars[1],
+        img: url(second),
       },
       {
         name: "Ирина",
         text: "Тёплая атмосфера и ощущение дома. Редко когда дизайнер так внимательно работает с деталями.",
-        img: avatars[2],
+        img: url(third),
       },
     ];
   }, []);

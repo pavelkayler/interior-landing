@@ -1,6 +1,6 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
-import { aboutUrl } from "../../../core/assets/placeholders.js";
+import { media001, url } from "../../../core/assets/media001.js";
 import "./about.css";
 
 const facts = [
@@ -12,6 +12,8 @@ const facts = [
 const About = ({ onOpenConsult }) => {
   const ref = useRevealOnScroll();
 
+  const aboutImage = media001[1] ?? media001[0];
+
   return (
     <Container>
       <div ref={ref}>
@@ -20,7 +22,7 @@ const About = ({ onOpenConsult }) => {
 
         <Row className="g-3 align-items-stretch">
           <Col lg={5}>
-            <div className="aboutMedia" style={{ backgroundImage: `url(${aboutUrl})` }} />
+            <div className="aboutMedia" style={{ backgroundImage: `url(${url(aboutImage)})` }} />
           </Col>
 
           <Col lg={7}>

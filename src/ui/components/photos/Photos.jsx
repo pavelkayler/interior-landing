@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Container, Row, Col, Modal, Carousel } from "react-bootstrap";
 import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
-import { photosUrls } from "../../../core/assets/placeholders.js";
+import { media001, url } from "../../../core/assets/media001.js";
 import "./photos.css";
 
 const Photos = () => {
@@ -10,12 +10,15 @@ const Photos = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const items = useMemo(() => {
-    return photosUrls.map((item, i) => ({
-      id: i,
-      thumb: item.thumb,
-      img: item.img,
-      label: `Реализация #${i + 1}`,
-    }));
+    return Array.from({ length: 6 }, (_, i) => {
+      const name = media001[i % media001.length];
+      return {
+        id: i,
+        thumb: url(name),
+        img: url(name),
+        label: `Реализация #${i + 1}`,
+      };
+    });
   }, []);
 
   const onOpen = (i) => {
