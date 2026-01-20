@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { Container, Carousel } from "react-bootstrap";
 import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
+import { avatars } from "../../../core/assets/placeholders.js";
 import "./feedback.css";
 
 const Feedback = () => {
@@ -11,17 +12,17 @@ const Feedback = () => {
       {
         name: "Анна",
         text: "Всё по делу: планировка, свет, материалы. Ремонт прошёл спокойно, результат — как на визуализации.",
-        img: `https://source.unsplash.com/1200x900/?chat,message&sig=401`,
+        img: avatars[0],
       },
       {
         name: "Сергей",
         text: "Понравилось, что сразу учитываются сценарии жизни и бюджет. Документация очень помогает строителям.",
-        img: `https://source.unsplash.com/1200x900/?review,note&sig=402`,
+        img: avatars[1],
       },
       {
         name: "Ирина",
         text: "Тёплая атмосфера и ощущение дома. Редко когда дизайнер так внимательно работает с деталями.",
-        img: `https://source.unsplash.com/1200x900/?feedback,letter&sig=403`,
+        img: avatars[2],
       },
     ];
   }, []);

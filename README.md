@@ -10,6 +10,10 @@ https://pavelkayler.github.io/interior-landing/
 
 GitHub Pages deploys automatically on every push to `main` via GitHub Actions.
 
+## Image placeholders (Plan B)
+
+The UI currently uses remote Unsplash Source image URLs (see `src/core/assets/placeholders.js`) because binary assets could not be downloaded in this environment. Replace them with local files in `/public/media/...` before production to avoid external dependencies. See `public/media/SOURCES.md` for the current list of sources.
+
 ## React Compiler
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).

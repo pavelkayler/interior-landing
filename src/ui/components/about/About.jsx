@@ -1,5 +1,6 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
+import { aboutUrl } from "../../../core/assets/placeholders.js";
 import "./about.css";
 
 const facts = [
@@ -19,7 +20,7 @@ const About = ({ onOpenConsult }) => {
 
         <Row className="g-3 align-items-stretch">
           <Col lg={5}>
-            <div className="aboutMedia" />
+            <div className="aboutMedia" style={{ backgroundImage: `url(${aboutUrl})` }} />
           </Col>
 
           <Col lg={7}>
