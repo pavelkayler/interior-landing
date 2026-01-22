@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Container, Form } from "react-bootstrap";
-import useRevealOnScroll from "../../../core/hooks/useRevealOnScroll.js";
-import { media001, img } from "../../../core/assets/media001.js";
+import useRevealOnScroll from "../../hooks/useRevealOnScroll.js";
+import { media001, img } from "../../assets/media001.js";
 import "./beforeAfter.css";
 
 const BeforeAfter = () => {

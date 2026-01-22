@@ -1,5 +1,5 @@
 import { Accordion, Container, Button } from "react-bootstrap";
-import { tg } from "../../../core/utils/tg.js";
+import { tg } from "../../utils/tg.js";
 import "./otherServices.css";
 
 const services = [

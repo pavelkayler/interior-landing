@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Container, Row, Col, Card, Modal } from "react-bootstrap";
-import { img, media001 } from "../../../core/assets/media001.js";
+import { img, media001 } from "../../assets/media001.js";
 import "./portfolioPreview.css";
 
 const PortfolioPreview = () => {

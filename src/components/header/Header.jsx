@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
-import useActiveSection from "../../../core/hooks/useActiveSection.js";
+import useActiveSection from "../../hooks/useActiveSection.js";
 import "./header.css";
 
 const navItems = [
