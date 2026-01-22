@@ -1,6 +1,6 @@
 import { Button, Container } from "react-bootstrap";
-import { img, media001 } from "../../../core/assets/media001.js";
-import { tg } from "../../../core/utils/tg.js";
+import { img, media001 } from "../../assets/media001.js";
+import { tg } from "../../utils/tg.js";
 import "./hero.css";
 
 const Hero = () => {

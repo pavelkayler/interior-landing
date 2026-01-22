@@ -2,7 +2,7 @@ import { useMemo, useRef, useState } from "react";
 import { Container } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs } from "swiper/modules";
-import { img, media001 } from "../../../core/assets/media001.js";
+import { img, media001 } from "../../assets/media001.js";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";

@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { tg } from "../../../core/utils/tg.js";
+import { tg } from "../../utils/tg.js";
 import "./footer.css";
 
 const Footer = () => {
